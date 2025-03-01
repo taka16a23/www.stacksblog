@@ -17,6 +17,11 @@
   "keywords": [],
   "author": "taka16a23",
   "license": "MIT",
+  "proxy": {
+    "/media": {
+      "target": "https://api.blog.taka16a23.com",
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
