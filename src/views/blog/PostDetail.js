@@ -182,7 +182,7 @@ class PostDatailComponent extends Component {
               </div>
             </div>
             <h1 className='mb-8 text-3xl font-semibold'>{this.state.model.title}</h1>
-            <div dangerouslySetInnerHTML={{__html: this.state.model.content}} />
+            <div dangerouslySetInnerHTML={{__html: this.state.model.content.replaceAll('/media/', process.env.REACT_APP_API_URL + '/media/')}} />
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-8 gap-12 mb-8">
