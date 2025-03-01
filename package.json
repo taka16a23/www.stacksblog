@@ -19,7 +19,7 @@
   "license": "MIT",
   "proxy": {
     "/media": {
-      "target": "https://api.blog.taka16a23.com",
+      "target": "https://api.blog.taka16a23.com"
     }
   },
   "devDependencies": {
