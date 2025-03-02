@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+
 import withRouter from "helpers/WithRouter";
-import moment from 'moment';
-import { withTranslation } from 'react-i18next';
+import moment from "moment";
+import { withTranslation } from "react-i18next";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.min.css";
 import "prismjs/plugins/toolbar/prism-toolbar.min.css";
@@ -85,8 +86,9 @@ import "prismjs/components/prism-vim.min.js";
 import "prismjs/components/prism-wiki.min.js";
 
 import Spinner from "components/spinner/Spinner";
-import { ServiceFactory } from 'services';
-import PostNotFound from 'components/PostNotFound';
+import { ServiceFactory } from "services";
+import PostNotFound from "components/PostNotFound";
+import _const from 'const';
 
 
 class PostDatailComponent extends Component {
@@ -131,7 +133,7 @@ class PostDatailComponent extends Component {
       isLoaded: false,
     });
     this.loadPostModel(slug);
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({top: 0, behavior: "smooth"});
   }
 
   render() {
@@ -147,29 +149,29 @@ class PostDatailComponent extends Component {
     }
     return (
       <>
-        <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
-          <div className='relative overflow-hidden shadow-md mb-6'>
+        <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
+          <div className="relative overflow-hidden shadow-md mb-6">
             <img
               src={this.state.model.image}
               alt={this.state.model.title}
-              decoding='async'
-              loading='async'
-              fetchpriority='low'
+              decoding="async"
+              loading="async"
+              fetchpriority="low"
               className="object-top h-full w-full rounded-t-lg"
             />
           </div>
-          <div className='px-4 lg:px-0'>
-            <div className='flex items-center mb-8 w-full'>
-              <div className='font-medium text-gray-700'>
+          <div className="px-4 lg:px-0">
+            <div className="flex items-center mb-8 w-full">
+              <div className="font-medium text-gray-700">
                 <svg xmlns="https://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
                 <span>
-                  {moment(this.state.model.publish_date).format('YYYY年 M月 D日')}
+                  {moment(this.state.model.publish_date).format(_const.Applications.DATE_FORMAT)}
                 </span>
               </div>
             </div>
-            <h1 className='mb-8 text-3xl font-semibold'>{this.state.model.title}</h1>
+            <h1 className="mb-8 text-3xl font-semibold">{this.state.model.title}</h1>
             <div dangerouslySetInnerHTML={{__html: this.state.model.content}} />
           </div>
         </div>
@@ -180,7 +182,7 @@ class PostDatailComponent extends Component {
                   style={{backgroundImage: "url(" + process.env.REACT_APP_API_URL + this.state.model.prev.image + ")"}}></div>
              <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72"></div>
              <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-               <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.prev.publish_date).format('YYYY年 M月 D日')}</p>
+               <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.prev.publish_date).format(_const.Applications.DATE_FORMAT)}</p>
                <p className="text-white text-shadow font-semibold text-2xl text-center">{this.state.model.prev.title}</p>
              </div>
              <span className="z-10 cursor-pointer absolute w-full h-full" onClick={() => this.handleOnClickNextPrev(this.state.model.prev.slug)}></span>
@@ -197,7 +199,7 @@ class PostDatailComponent extends Component {
                   style={{backgroundImage: "url(" + process.env.REACT_APP_API_URL + this.state.model.next.image + ")"}}></div>
              <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72"></div>
              <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-               <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.next.publish_date).format('YYYY年 M月 D日')}</p>
+               <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.next.publish_date).format(_const.Applications.DATE_FORMAT)}</p>
                <p className="text-white text-shadow font-semibold text-2xl text-center">{this.state.model.next.title}</p>
              </div>
              <span className="z-10 cursor-pointer absolute w-full h-full" onClick={() => this.handleOnClickNextPrev(this.state.model.next.slug)}></span>
