@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { Provider } from "react-redux";
-import { configureStore } from "redux/Store";
 import { createBrowserHistory } from "history";
 
 import enJson from "locales/en.json";
@@ -29,14 +27,12 @@ const History = createBrowserHistory({ basename: "/" });
 export default class App extends Component {
   render() {
     return (
-        <Provider store={configureStore()}>
-          <BrowserRouter history={History}>
-            <ScrollToTop/>
-            <Routes>
-              <Route path="*" element={<Layout/>}/>
-            </Routes>
-          </BrowserRouter>
-        </Provider>
+      <BrowserRouter history={History}>
+        <ScrollToTop/>
+        <Routes>
+          <Route path="*" element={<Layout/>}/>
+        </Routes>
+      </BrowserRouter>
     );
   }
 }
