@@ -36,7 +36,6 @@ class Page extends Component {
   getPosts(categoryName) {
     var oParams = new URLSearchParams();
     if(categoryName !== null) {
-      console.log(categoryName)
       oParams.append('category__name', categoryName);
     }
     oParams.append('ordering', "-publish_date");
@@ -55,7 +54,6 @@ class Page extends Component {
 
   handlePageChange(data) {
     let pageNumber = data['selected'];
-    console.log(pageNumber);
     this.setState({
       start: pageNumber * this.state.perPage
     });
