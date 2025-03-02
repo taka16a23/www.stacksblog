@@ -2,7 +2,7 @@ import React, { Component, lazy } from 'react';
 
 import { NavLink, Routes, Route } from "react-router-dom";
 
-import PostList from 'components/PostList';
+import Page from 'pages/Page';
 import PostDetail from 'pages/post/[slug]/PostDetail';
 
 import { ServiceFactory } from 'services';
@@ -48,7 +48,7 @@ class CategoriesLayout extends Component {
             <div className="lg:col-span-8 col-span-1">
               <Routes>
                 <Route path="/post/:slug" element={<PostDetail/>}/>
-                <Route path="/*" element={<PostList categoryName={this.state.categoryName}/>}/>
+                <Route path="/*" element={<Page categoryName={this.state.categoryName}/>}/>
                 <Route path='*' element={<Error404/>}/>
               </Routes>
             </div>

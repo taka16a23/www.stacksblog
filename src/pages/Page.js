@@ -8,7 +8,7 @@ import PostNotFound from 'components/PostNotFound';
 import { ServiceFactory } from 'services';
 
 
-class PostList extends Component {
+class Page extends Component {
 
   constructor(props) {
     super(props);
@@ -20,6 +20,17 @@ class PostList extends Component {
       perPage: 5,
       categoryName: props.CategoryName,
     }
+  }
+
+  componentDidMount() {
+    this.getPosts(this.props.categoryName);
+  }
+
+  shouldComponentUpdate(nextProps: Props, nextState: State) {
+    if(this.state.categoryName !== nextProps.categoryName) {
+      this.getPosts(nextProps.categoryName);
+    }
+    return true;
   }
 
   getPosts(categoryName) {
@@ -40,17 +51,6 @@ class PostList extends Component {
     }).catch(err => {
       alert(err);
     });
-  }
-
-  componentDidMount() {
-    this.getPosts(this.props.categoryName);
-  }
-
-  shouldComponentUpdate(nextProps: Props, nextState: State) {
-    if(this.state.categoryName !== nextProps.categoryName) {
-      this.getPosts(nextProps.categoryName);
-    }
-    return true;
   }
 
   handlePageChange(data) {
@@ -104,4 +104,4 @@ class PostList extends Component {
   };
 }
 
-export default withTranslation()(PostList);
+export default withTranslation()(Page);
