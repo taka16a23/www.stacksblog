@@ -1,4 +1,4 @@
-export default class AliasRoutes {
+export default class Routes {
   static APIBlogCategory = "/api/blog/category/";
   static APIBlogPost = "/api/blog/post/";
   static APIBlogPostIds = "/api/blog/post/ids";

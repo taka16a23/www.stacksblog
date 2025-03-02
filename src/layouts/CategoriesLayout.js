@@ -2,10 +2,10 @@ import React, { Component, lazy } from "react";
 
 import { NavLink, Routes, Route } from "react-router-dom";
 
+import _const from 'const';
 import Page from "pages/Page";
 import PostDetail from "pages/post/[slug]/PostDetail";
 import { ServiceFactory } from "services";
-import AliasRoutes from "routes/AliasRoutes";
 const Error404 = lazy(() => new Promise((resolve) => {
   setTimeout(() => resolve(import("pages/errors/Error404")), 0);
 }));
@@ -46,8 +46,8 @@ class CategoriesLayout extends Component {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8 col-span-1">
             <Routes>
-              <Route path={AliasRoutes.BlogPost} element={<PostDetail/>}/>
-              <Route path={AliasRoutes.BlogPostList + "*"}
+              <Route path={_const.Routes.BlogPost} element={<PostDetail/>}/>
+              <Route path={_const.Routes.BlogPostList + "*"}
                      element={<Page categoryName={this.state.categoryName}/>}/>
               <Route path="*" element={<Error404/>}/>
             </Routes>
@@ -60,7 +60,7 @@ class CategoriesLayout extends Component {
                 </h2>
                 {this.models.map((category) => (
                   <NavLink
-                    to={AliasRoutes.BlogPostList}
+                    to={_const.Routes.BlogPostList}
                     className="cursor-pointer text-neutral-500 no-underline hover:underline hover:text-blue-700"
                     key={category.category_id}
                     onClick={() => {this.handleOnClick(category.name)}}>

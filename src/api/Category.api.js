@@ -1,10 +1,10 @@
 import API from "./API";
-import AliasRoutes from 'routes/AliasRoutes';
+import _const from 'const';
 
 
 export default class CategoryAPI extends API {
 
-  static PATH = AliasRoutes.APIBlogCategory;
+  static PATH = _const.Routes.APIBlogCategory;
 
   constructor() {
     super(process.env.REACT_APP_API_URL, CategoryAPI.PATH);

@@ -1,10 +1,10 @@
 import API from "./API";
-import AliasRoutes from 'routes/AliasRoutes';
+import _const from 'const';
 
 
 export default class PostAPI extends API {
 
-  static PATH = AliasRoutes.APIBlogPost;
+  static PATH = _const.Routes.APIBlogPost;
 
   constructor() {
     super(process.env.REACT_APP_API_URL, PostAPI.PATH);

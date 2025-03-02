@@ -85,10 +85,10 @@ import "prismjs/components/prism-uri.min.js";
 import "prismjs/components/prism-vim.min.js";
 import "prismjs/components/prism-wiki.min.js";
 
+import _const from 'const';
 import Spinner from "components/spinner/Spinner";
 import { ServiceFactory } from "services";
 import PostNotFound from "components/PostNotFound";
-import _const from 'const';
 
 
 class PostDatailComponent extends Component {
@@ -179,7 +179,7 @@ class PostDatailComponent extends Component {
           {this.state.model.prev.slug !== "" ?
            <div className="col-span-1 lg:col-span-4 adjacent-post rounded-lg relative h-72">
              <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72"
-                  style={{backgroundImage: "url(" + process.env.REACT_APP_API_URL + this.state.model.prev.image + ")"}}></div>
+                  style={{backgroundImage: "url(" + this.state.model.prev.image + ")"}}></div>
              <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72"></div>
              <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
                <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.prev.publish_date).format(_const.Applications.DATE_FORMAT)}</p>
@@ -196,7 +196,7 @@ class PostDatailComponent extends Component {
           {this.state.model.next.slug !== "" ?
            <div className="col-span-1 lg:col-span-4 adjacent-post rounded-lg relative h-72">
              <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72"
-                  style={{backgroundImage: "url(" + process.env.REACT_APP_API_URL + this.state.model.next.image + ")"}}></div>
+                  style={{backgroundImage: "url(" + this.state.model.next.image + ")"}}></div>
              <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72"></div>
              <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
                <p className="text-white text-shadow font-semibold text-xs">{moment(this.state.model.next.publish_date).format(_const.Applications.DATE_FORMAT)}</p>

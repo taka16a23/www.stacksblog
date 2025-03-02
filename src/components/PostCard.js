@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import moment from 'moment';
 import { NavLink } from 'react-router-dom';
-import ContentLoader from "react-content-loader";
 
 import _const from 'const';
 import skeletons from 'components/skeletons';
@@ -50,7 +49,7 @@ export default class PostCard extends Component {
           />
         </div>
         <h1 className='transition duration-300 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold'>
-          <NavLink to={`/post/${this.state.model.slug}`}>
+          <NavLink to={_const.Routes.BlogPost.replace(':slug', this.state.model.slug)}>
             {this.state.model.title}
           </NavLink>
         </h1>
@@ -64,9 +63,11 @@ export default class PostCard extends Component {
             </span>
           </div>
         </div>
-        <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8'>{this.state.model.excerpt}</p>
+        <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8'>
+          {this.state.model.excerpt}
+        </p>
         <div className='text-center'>
-          <NavLink to={`/post/${this.state.model.slug}`}>
+          <NavLink to={_const.Routes.BlogPost.replace(':slug', this.state.model.slug)}>
             <span className='transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
               続けて読む
             </span>
