@@ -5,7 +5,7 @@ import Header from 'components/Header';
 import CategoriesLayout from 'layouts/CategoriesLayout';
 
 const Error403 = lazy(() => new Promise((resolve) => {
-  setTimeout(() => resolve(import("views/errors/Error403")), 0);
+  setTimeout(() => resolve(import("pages/errors/Error403")), 0);
 }));
 
 

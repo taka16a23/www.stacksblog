@@ -7,9 +7,8 @@ import PostDetail from 'pages/post/[slug]/PostDetail';
 
 import { ServiceFactory } from 'services';
 
-
 const Error404 = lazy(() => new Promise((resolve) => {
-  setTimeout(() => resolve(import("views/errors/Error404")), 0);
+  setTimeout(() => resolve(import("pages/errors/Error404")), 0);
 }));
 
 
@@ -41,7 +40,6 @@ class CategoriesLayout extends Component {
       categoryName: categoryName,
     });
   }
-
 
   render() {
     return (
