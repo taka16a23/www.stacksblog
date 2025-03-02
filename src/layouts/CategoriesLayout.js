@@ -3,7 +3,7 @@ import React, { Component, lazy } from 'react';
 import { NavLink, Routes, Route } from "react-router-dom";
 
 import PostList from 'components/PostList';
-import PostDetail from 'views/blog/PostDetail';
+import PostDetail from 'pages/post/[slug]/PostDetail';
 
 import { ServiceFactory } from 'services';
 
