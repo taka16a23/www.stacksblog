@@ -2,6 +2,7 @@ export default class AliasRoutes {
   static APIBlogCategory = "/api/blog/category/";
   static APIBlogPost = "/api/blog/post/";
   static APIBlogPostIds = "/api/blog/post/ids";
-  static BlogPost = "/post/";
+  static BlogPostList = "/";
+  static BlogPost = "/post/:slug";
   static Error403 = "/errors/403";
 }
