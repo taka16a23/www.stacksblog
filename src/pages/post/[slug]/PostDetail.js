@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import withRouter from "helpers/WithRouter";
 import moment from 'moment';
-import { ServiceFactory } from 'services';
 import { withTranslation } from 'react-i18next';
-import Spinner from "views/spinner/Spinner";
-
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.min.css";
 import "prismjs/plugins/toolbar/prism-toolbar.min.css";
@@ -17,7 +14,6 @@ import "prismjs/plugins/line-highlight/prism-line-highlight.min.css";
 import "prismjs/plugins/line-highlight/prism-line-highlight.min.js";
 import "prismjs/plugins/command-line/prism-command-line.min.css";
 import "prismjs/plugins/command-line/prism-command-line.min.js";
-
 import "prismjs/components/prism-python.min.js";
 import "prismjs/components/prism-apacheconf.min.js";
 import "prismjs/components/prism-bash.min.js";
@@ -87,6 +83,9 @@ import "prismjs/components/prism-tsx.min.js";
 import "prismjs/components/prism-uri.min.js";
 import "prismjs/components/prism-vim.min.js";
 import "prismjs/components/prism-wiki.min.js";
+
+import Spinner from "components/spinner/Spinner";
+import { ServiceFactory } from 'services';
 
 
 class PostDatailComponent extends Component {
