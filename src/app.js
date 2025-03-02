@@ -1,17 +1,17 @@
 import React, { Component } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 import { Provider } from "react-redux";
 import { configureStore } from "redux/Store";
 import { createBrowserHistory } from "history";
-import Layout from 'layouts/Layout';
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import enJson from 'locales/en.json';
-import jaJson from 'locales/ja.json';
-import ScrollToTop from 'helpers/ScrollToTop';
 
+import enJson from "locales/en.json";
+import jaJson from "locales/ja.json";
+import Layout from "layouts/Layout";
+import ScrollToTop from "helpers/ScrollToTop";
 
-const History = createBrowserHistory({ basename: "/" });
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -23,9 +23,10 @@ i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
 });
 
+const History = createBrowserHistory({ basename: "/" });
+
 
 export default class App extends Component {
-
   render() {
     return (
         <Provider store={configureStore()}>
