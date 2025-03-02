@@ -34,13 +34,8 @@ class Page extends Component {
   }
 
   getPosts(categoryName) {
-    var oParams = new URLSearchParams();
-    if(categoryName !== null) {
-      oParams.append('category__name', categoryName);
-    }
-    oParams.append('ordering', "-publish_date");
     var blogService = ServiceFactory.createBlogService();
-    blogService.listPostIds(oParams).then(ids => {
+    blogService.listPostIds(categoryName).then(ids => {
       this.list_post_ids = ids;
       this.setState({
         listPostIdsLength: this.list_post_ids.length,

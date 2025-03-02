@@ -47,9 +47,14 @@ export default class BlogService extends Object {
     });
   }
 
-  listPostIds(a_oParams={}) {
+  listPostIds(a_strCategoryName=null) {
+    var oParams = new URLSearchParams();
+    if(a_strCategoryName !== null) {
+      oParams.append('category__name', a_strCategoryName);
+    }
+    oParams.append('ordering', "-publish_date");
     return new Promise((resolve, reject) => {
-      var tData = {'params': a_oParams};
+      var tData = {'params': oParams};
       let api = APIFactory.createPostIdsAPI();
       api.get(tData).then(data => {
         resolve(data);
