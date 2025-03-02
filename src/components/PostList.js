@@ -68,7 +68,6 @@ class PostList extends Component {
         <PostNotFound/>
       )
     }
-
     return (
       <>
         <div>
