@@ -25,7 +25,6 @@
     "lodash": "^4.17.21",
     "mixin-deep": "^2.0.1",
     "node": "^20.5.0",
-    "node-sass": "^9.0.0",
     "npm-check-updates": "^16.10.17",
     "postcss": "^8.4.27",
     "react-compress": "^3.6.4",
@@ -62,6 +61,7 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
+    "sass": "^1.85.1",
     "styled-components": "^6.0.7",
     "styled-jsx": "^5.1.2"
   },
