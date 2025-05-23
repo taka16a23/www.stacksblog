@@ -17,7 +17,7 @@ export default class Header extends Component {
             </a>
           </div>
           <div className='hidden md:float-left md:contents'>
-            <a className="" href="https://taka16a23.com" target="_window">
+            <a className="" href="https://www.taka16a23.com" target="_window">
               <span className='md:float-right hover:text-pink-600 mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
                 My Portfolio
               </span>
