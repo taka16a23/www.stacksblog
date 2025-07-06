@@ -46,6 +46,7 @@ class Page extends Component {
     }).catch(err => {
       alert(err);
     });
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   handlePageChange(data) {
