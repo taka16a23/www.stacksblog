@@ -38,7 +38,7 @@ class Page extends Component {
     blogService.listPostIds(categoryName).then(ids => {
       this.list_post_ids = ids;
       this.setState({
-        start: 1,
+        start: 0,
         listPostIdsLength: this.list_post_ids.length,
         isLoaded: true,
         categoryName: categoryName,
