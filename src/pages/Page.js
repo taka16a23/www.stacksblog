@@ -74,7 +74,7 @@ class Page extends Component {
         </div>
         <div role="navigation">
           <ReactPaginate
-            pageCount={Math.ceil(this.list_post_ids.length / this.state.perPage)}
+            pageCount={Math.ceil(this.state.listPostIdsLength / this.state.perPage)}
             marginPagesDisplayed={3}
             pageRangeDisplayed={5}
             onPageChange={this.handlePageChange.bind(this)}
