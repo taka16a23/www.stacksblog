@@ -18,6 +18,7 @@ class Page extends Component {
       isLoaded: false,
       start: 0,
       perPage: 5,
+      currentPage:-1,
       categoryName: props.CategoryName,
     }
   }
@@ -34,27 +35,29 @@ class Page extends Component {
   }
 
   getPosts(categoryName) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     var blogService = ServiceFactory.createBlogService();
     blogService.listPostIds(categoryName).then(ids => {
       this.list_post_ids = ids;
       this.setState({
-        start: 0,
         listPostIdsLength: this.list_post_ids.length,
         isLoaded: true,
         categoryName: categoryName,
+        start: 0,
+        currentPage: 0,
       });
     }).catch(err => {
       alert(err);
     });
-    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   handlePageChange(data) {
+    window.scrollTo({top: 0, behavior: 'smooth'});
     let pageNumber = data['selected'];
     this.setState({
-      start: pageNumber * this.state.perPage
+      start: pageNumber * this.state.perPage,
+      currentPage: pageNumber,
     });
-    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   render() {
@@ -92,6 +95,7 @@ class Page extends Component {
             breakLabel='...'
             breakClassName='font-bold text-white'
             breakLinkClassName='page-link'
+            forcePage={this.state.currentPage}
           />
         </div>
       </>
