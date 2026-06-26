@@ -39,14 +39,16 @@ export default class PostCard extends Component {
     return (
       <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
         <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
-          <img
-            src={this.state.model.image}
-            alt={this.state.model.title}
-            decoding='async'
-            loading='async'
-            fetchpriority='low'
-            className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
-          />
+          <NavLink to={_const.Routes.BlogPost.replace(':slug', this.state.model.slug)}>
+            <img
+              src={this.state.model.image}
+              alt={this.state.model.title}
+              decoding='async'
+              loading='async'
+              fetchpriority='low'
+              className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+            />
+          </NavLink>
         </div>
         <h1 className='transition duration-300 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold'>
           <NavLink to={_const.Routes.BlogPost.replace(':slug', this.state.model.slug)}>
